@@ -40,8 +40,8 @@ export default function LoginForm({login}) {
         setErrors(
             {}
         )
-        return alert("Datos completos")}
     }
+}
 
     return (
         <div className={styles.Container}>
@@ -63,4 +63,5 @@ export default function LoginForm({login}) {
             </form>
         </div>
     )
+
 }
