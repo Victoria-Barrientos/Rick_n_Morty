@@ -1,0 +1,32 @@
+.Nav {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(212, 212, 212);
+    padding: 10px;
+}
+
+.Logo {
+    max-width: 150px;
+
+}
+
+.NavLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px 0px 0px 0px;
+}
+
+.Home {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.About {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    float: right;
+
+}

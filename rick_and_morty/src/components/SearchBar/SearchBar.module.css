@@ -1,0 +1,26 @@
+.Container {
+    border: 1px solid black
+}
+
+.Input::-webkit-search-decoration,
+.Input::-webkit-search-cancel-button,
+.Input::-webkit-search-results-button,
+.Input::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+.Input {
+    padding: 5px;
+    border: 1px grey;
+}
+
+.Input:focus {
+    outline: none;
+}
+
+.Button {
+    padding: 5px;
+    border: 0px;
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+}

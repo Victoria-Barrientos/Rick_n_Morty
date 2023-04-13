@@ -1,0 +1,6 @@
+.About {
+    min-height: 100vh;
+    display: flex;
+    background-color: rgb(234, 234, 234);
+    padding: 10px 20px;
+}

@@ -1,0 +1,7 @@
+.Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(234, 234, 234);
+    padding: 10px 20px;
+}
