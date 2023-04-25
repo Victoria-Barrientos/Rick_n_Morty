@@ -6,7 +6,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export function Card({name, species, gender, image, id, onClose, addFav, removeFav, myFavorites}) {
+export function Card({name, species, gender, image, id, key, onClose, addFav, removeFav, myFavorites}) {
 
    const location = useLocation()
 
@@ -29,7 +29,7 @@ export function Card({name, species, gender, image, id, onClose, addFav, removeF
             setIsFav(true);
          }
       });
-   }, [myFavorites]);
+   }, [myFavorites, id]);
 
    return (
       <div className={styles.Container}>

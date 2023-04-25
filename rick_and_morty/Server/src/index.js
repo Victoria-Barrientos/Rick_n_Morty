@@ -1,20 +1,28 @@
-const http = require('http');
+const express = require('express');
+const server = express();
 const PORT = 3001;
+const routes = require('./routes/index');
+const morgan = require('morgan');
 
-module.exports =
-  http
-.createServer((req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    const {url} = req;
-    if(url.includes("/rickandmorty/character/")) {
-        const id = url.split("/").at(-1);
-        const character = data.find((char) => char.id === parseInt(id));
+server.use(express.json());
+server.use(morgan('dev'));
 
-        if(character) {
-          res.writeHead(200, { "Content-Type": "Application/json" }).end(JSON.stringify(character))
-        } else {
-          res.writeHead(404, { "Content-Type": "Application/json" }).end(JSON.stringify({ error: "Character not found"}))
-        }
-    }
-})
-.listen(PORT, "localhost")
+server.use((req, res, next) => {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Credentials', 'true');
+   res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+   );
+   res.header(
+      'Access-Control-Allow-Methods',
+      'GET, POST, OPTIONS, PUT, DELETE'
+   );
+   next();
+});
+
+server.use('/rickandmorty', routes);
+
+server.listen(PORT, () => {
+   console.log('Server raised in port: ' + PORT);
+});
