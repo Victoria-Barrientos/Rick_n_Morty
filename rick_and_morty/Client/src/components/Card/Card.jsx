@@ -19,7 +19,7 @@ export function Card({name, species, gender, image, id, key, onClose, addFav, re
       }
       else {
          setIsFav(true);
-         addFav({name, species, gender, image, id})
+         addFav({name, species, gender, image, id, key})
       }
    };
 
